@@ -1,12 +1,10 @@
 @charset "UTF-8";
 * {
     box-sizing: border-box;
-    font-family: 'Chakra Petch', ;
 }
 body {
     margin: 0 auto;
     background-color: rgb(255, 243, 252);
-    font-family: 'Chakra Petch', ;
 }
 .topTittle{
     width: 1438px;
@@ -16,7 +14,6 @@ body {
     display: block;
     background: linear-gradient(to right, rgb(247, 201, 243) 0%, rgb(65, 128, 246) 100%);
     box-shadow: 0 1px 0 0 #110038;
-    font-family: 'Chakra Petch', ;
 }
 .nav-container {
     display: flex;
@@ -28,7 +25,6 @@ body {
 }
 nav{
     width: auto;
-    font-family: 'Chakra Petch', ;
 }
 nav ul {
     list-style-type: none;
@@ -54,7 +50,6 @@ nav ul {
     background: #F7C9F3;
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
-    font-family: 'Chakra Petch', ;
 }
 
 .boton-tema {
