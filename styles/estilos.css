@@ -1,22 +1,24 @@
 @charset "UTF-8";
 * {
     box-sizing: border-box;
-    font-family: 'Chakra Petch', medium;
+    font-family: 'Chakra Petch', bold;
     font-size: 14px;
 }
 body {
-    margin: 0 auto;
     background-color: rgb(255, 243, 252);
+    margin: 0px auto;
+    display: flex;
+    justify-content: center;
 }
-
 .topTittle{
     width: 1438px;
     height: 33px;
     padding-left: 15px;
     line-height: 33px;
     display: block;
-    background: linear-gradient(to right, rgb(247, 201, 243) 0%, rgb(65, 128, 246) 100%);
+    background: linear-gradient(to right, rgb(65, 128, 246) 0%, rgb(247, 201, 243) 100%);
     box-shadow: 0 1px 0 0 #110038;
+    color: white;
 }
 .nav-container {
     display: flex;
@@ -128,7 +130,9 @@ section{
         padding-left: 10px;
         align-items: center;
         justify-content: space-between;
-        background: linear-gradient(to right, rgb(247, 201, 243) 0%, rgb(65, 128, 246) 100%);
+        background: linear-gradient(to right, rgb(65, 128, 246) 0%, rgb(247, 201, 243) 100%);
+        font-weight: bold;
+        color: white;
     }
     .searchBarra {
         display: flex;
@@ -194,13 +198,15 @@ section{
         flex-flow: row;
         align-items: center;
         justify-content: space-between;
-        background: linear-gradient(to right, rgb(247, 201, 243) 0%, rgb(65, 128, 246) 100%);
+        background: linear-gradient(to right, rgb(65, 128, 246) 0%, rgb(247, 201, 243) 100%);
     }
         .imgName {
             width: auto;
             height: auto;
             line-height: 20px;
             margin-left: 5px;
+            color: white;
+            font-weight: bold;
         }
         .imgX {
             width: 16px;
@@ -227,6 +233,7 @@ section{
                 top: 220px;
                 background: #4180F6;
                 border: 1px solid #4C2F99;
+                color: white;
                 box-shadow: inset -1px -1px 0 0 #284F99, inset 1px 1px 0 0 #FFFFFF;
             }
 .longImg {
@@ -247,7 +254,7 @@ section{
     flex-flow: row;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(to right, rgb(247, 201, 243) 0%, rgb(65, 128, 246) 100%);
+    background: linear-gradient(to right, rgb(65, 128, 246) 0%, rgb(247, 201, 243) 100%);
 }
 .gifFrameLong{
     width: 584px;
