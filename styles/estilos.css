@@ -72,6 +72,22 @@ nav ul {
 #dropdown-img {
     width: auto;
 }
+#dropdownCont {
+    width: 170px;
+    height: 102px;
+    margin-top: 100px;
+    padding: 5px;
+    background: #E6E6E6;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+#dropdownItem {
+    width: 150px;
+    height: 36px;
+    padding: 7px;
+    background: #E6E6E6;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+
 label {
     height: 36px;
     display: flex;
@@ -117,7 +133,7 @@ section{
     
 .searchBar {
     width: 1200px;
-    height: 99px;
+    height: auto;
     padding-top: 1px;
     background: #E6E6E6;
     box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
@@ -158,6 +174,23 @@ section{
             border: 1px solid #808080;
             box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
         }
+    .searchResults {
+        width: auto;
+        height: 160px;
+        padding-top: 5px;
+        background: #E6E6E6;
+        box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+        margin: auto;
+        display: none;
+    }
+    #searchResultItem {
+        width: 1057px;
+        height: 36px;
+        margin: 11px 0px 0px 20px;
+        background: #F0F0F0;
+        border: 1px solid #808080;
+        box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+    }
 .suggest {
     width: 1200px;
     padding: 0px;
