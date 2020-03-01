@@ -22,87 +22,69 @@ body {
 }
 .nav-container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     margin: 0 100px;
     height: 110px;
     width: 1200px;
 }
-nav{
-    width: auto;
-}
-nav ul {
-    list-style-type: none;
-    display: flex;
-    align-content: flex-end;
-    justify-content: center;
-    flex-direction: row;
-}
-
 .logoGifos {
     width: 90px;
     height: 48px;
 }
+.menu {
+    display: flex;   
+}
 .nav-link{
-    text-decoration: none;
-    width: 144px;
+    width: auto;
     height: 36px;
-    margin: 0px 0px 0px 15px;
-    padding: 0px;
+    margin-left: 15px;
+    padding: 0px 29px;
     line-height: 36px;
     text-align: center;
     background: #F7C9F3;
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
 }
-
-.boton-tema {
-    width: 36px;
-    height: 36;
+.dropdown-title{
+    display: flex;
+    width: auto;
+    margin: 0px;
+    padding: 0px;
 }
-.dropdown {
+.dropdown-img {
     width: 36px;
     height: 36px;
-    background: #F7C9F3;
+    padding: auto;
+    text-align: center;
+    background: #E6BBE2;
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
-    display: flex;
-    justify-content: center;
 }
-#dropdown-img {
-    width: auto;
-}
-#dropdownCont {
+.dropdown-menu {
     width: 170px;
     height: 102px;
-    margin-top: 100px;
-    padding: 5px;
+    margin-left: 14px;
     background: #E6E6E6;
+    display: flex;
+    align-content: center;
+    flex-flow: column;
     box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    position: absolute;
+    visibility: hidden;
+    
 }
-#dropdownItem {
+.dropdown-Item {
     width: 150px;
     height: 36px;
-    padding: 7px;
-    background: #E6E6E6;
-    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    margin: 10px 10px 0px 10px;
+    color: #110038 100%;
+    background: #F0F0F0;
+    border: 1px solid #808080;
+    text-align: center;
+    box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
 }
 
-label {
-    height: 36px;
-    display: flex;
-    justify-content: center;
-}
-
-#toggle {
-    display: none;
-    width: 36px;
-    height: 36px;
-}
-.menu {
-    display: flex;
-    align-items: center;
-}
 
 .misGuifos-link {
     width: auto;
@@ -182,7 +164,7 @@ section{
         box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
         margin: auto;
     }
-    #searchResultItem {
+    .searchResultItem {
         width: 1057px;
         height: 36px;
         margin: 11px 0px 0px 20px;

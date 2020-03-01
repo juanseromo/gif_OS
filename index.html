@@ -20,24 +20,20 @@
             Bienvenidos/as a Guifos.com! — — — — — — Donde los gifs están.///// Número de visitas: 12.765.803
         </span>
         <div class="nav-container">
-            <img class="logoGifos" alt="logo gifos" src="images/gifOF_logo.png"></img>
-            <nav>
-                <ul>
-                    <li class="menu">
-                        <a href="#" class="nav-link"> Crear GifOS </a>
-                        <a href="#" class="nav-link">Elegir Tema</a>
-                        <a href="#" class="dropdown"> <img id="dropdown-img" src="images/dropdown.svg" alt="dropdown-menu"></a>
-                            <optgroup id="dropdownCont">
-                                <option id="dropdownItem" value="Sailor-Day"> Sailor Day </option>
-                                <option id="dropdownItem" value="Sailor-night" href="#"> Sailor Night </option>
-                            </optgroup>
-
-                            <!--<label for="toggle"><img src="images/dropdown.svg" alt="menu"></label>
-                            <input type="checkbox" id="toggle">-->
-                        
-                        <a href="#" class="misGuifos-link"> Mis guifos</a>
-                    </li>
-                </ul>
+            <img class="logoGifos" alt="logo gifos" src="images/gifOF_logo.png">
+            <nav class="menu">
+                <a href="#" class="nav-link"> Crear GifOS </a>
+                <div>
+                    <div class="dropdown-title">
+                    <a href="#" class="nav-link"> Elegir Tema </a>
+                    <a href="#" class="dropdown-img"> 
+						<img src="images/dropdown.svg" alt=""/> </a></div>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-Item" value="Sailor-Day" href="#"> Sailor Day </a>
+                        <a class="dropdown-Item" value="Sailor-night" href="#"> Sailor Night </a>
+                    </div>
+                </div>
+                <a href="#" class="misGuifos-link"> Mis guifos</a> 
             </nav>
         </div>
     </header>
@@ -45,13 +41,13 @@
         <section class="searchBar"> 
             <div class="searchBar-cont">Buscar</div>
             <div class="searchBarra">
-                <input class="searchbar-buscar" type="text" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…"></input>
+                <input class="searchbar-buscar" type="text" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
                 <button class="buscarBut"> Buscar</button>
             </div>
             <div class="searchResults">
-                <div id="searchResultItem"> </div>
-                <div id="searchResultItem"> </div>
-                <div id="searchResultItem"> </div>
+                <div class="searchResultItem"> </div>
+                <div class="searchResultItem"> </div>
+                <div class="searchResultItem"> </div>
             </div>
         </section>
 
@@ -179,3 +175,4 @@
 </body>
 	
 </html>
+
