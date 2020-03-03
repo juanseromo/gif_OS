@@ -9,6 +9,10 @@ body {
     margin: 0px auto;
     display: flex;
     justify-content: center;
+    width: auto;
+}
+main{
+    width: auto;
 }
 .topTittle{
     width: 1438px;
@@ -35,56 +39,78 @@ body {
 .menu {
     display: flex;   
 }
+.dropdown{
+    display: flex;
+}
 .nav-link{
-    width: auto;
     height: 36px;
+    text-decoration: none;
     margin-left: 15px;
-    padding: 0px 29px;
+    padding: 0px 22px;
     line-height: 36px;
     text-align: center;
+    font-size: 16px;
+    color: #110038;
+    display: flex;
+    flex-direction: row;
     background: #F7C9F3;
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
-}
-.dropdown-title{
-    display: flex;
-    width: auto;
-    margin: 0px;
-    padding: 0px;
 }
 .dropdown-img {
     width: 36px;
     height: 36px;
     padding: auto;
     text-align: center;
-    background: #E6BBE2;
+    line-height: 30px;
+    background: #F7C9F3;
     border: 1px solid #110038;
-    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+    box-shadow: inset -1px -1px 0 0  #997D97, inset 1px 1px 0 0 #FFFFFF;
 }
 .dropdown-menu {
-    width: 170px;
     height: 102px;
     margin-left: 14px;
     background: #E6E6E6;
-    display: flex;
-    align-content: center;
-    flex-flow: column;
+    display: none;
     box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
     position: absolute;
-    visibility: hidden;
-    
+    transform: translateY(36px);
 }
 .dropdown-Item {
     width: 150px;
     height: 36px;
     margin: 10px 10px 0px 10px;
-    color: #110038 100%;
     background: #F0F0F0;
     border: 1px solid #808080;
+    line-height: 36px;
     text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    color: #110038;
+    display: block;
     box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
 }
-
+.nav-link:hover{
+    background: #E6BBE2;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+.dropdown:hover .dropdown-menu{
+    display: block;
+}
+.dropdown-img:hover{
+    background: #E6BBE2;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+.misGuifos-link:hover{
+    color: #706783;
+}
+.dropdown-Item:hover{
+    background: #FFF4FD;
+    border: 1px solid #CCA6C9;
+    box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
+}
 
 .misGuifos-link {
     width: auto;
@@ -92,23 +118,10 @@ body {
     margin-left: 20px;
     color: #110038;
     letter-spacing: 0;
-    line-height: 18px;
-
+    line-height: 36px;
+    text-decoration: none;
 }
 
-/*
-nav li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#toggle:checked {
-    display: block;
-}
-header>li:nth-child(2) {
-    clear: both;
-}*/ 
 section{
     margin: 0 100px;
 }
@@ -154,6 +167,9 @@ section{
             height: 36px;
             background: #E6E6E6;
             border: 1px solid #808080;
+            display: flex;
+            color: #B4B4B4;
+            justify-content: space-around;
             box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
         }
     .searchResults {
@@ -168,7 +184,13 @@ section{
         width: 1057px;
         height: 36px;
         margin: 11px 0px 0px 20px;
+        padding: 0px 15px;
+        display: block;
+        text-decoration: none;
         background: #F0F0F0;
+        font-size: 16px;
+        color: #110038;
+        line-height: 36px;
         border: 1px solid #808080;
         box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
     }
@@ -277,3 +299,87 @@ section{
     position: absolute;
     align-items: center;
 }
+.crear-guifos{
+    width: 684px;
+    height: 386px;
+    padding: 0px;
+    margin: 100px auto;
+    background: #E6E6E6;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+    .crear-guifos-title{
+        width: auto;
+        height: 26px;
+        line-height: 26px;
+        margin: 2px;
+        padding-left: 10px;
+        align-items: center;
+        justify-content: space-between;
+        background: linear-gradient(to right, rgb(65, 128, 246) 0%, rgb(247, 201, 243) 100%);
+        font-weight: bold;
+        color: white;
+    }
+    .arti-text{
+        width: 520px;
+        margin: 30px auto;
+    }
+    article.arti-text p:nth-child(3){
+        line-height: 26px;
+    }
+    .crear-guifos img{
+        margin-top: 30px;
+        margin-left: 25px;
+        float: left;
+    }
+    #crear-active{
+        width: 144px;
+        height: 36px;
+        text-decoration: none;
+        color: #110038;
+        font-size: 16px;
+        float: right;
+        text-align: center;
+        line-height: 32px;
+        margin-right: 16px;
+        margin-top: 10px;
+        background: #FFF4FD;
+        border: 1px solid #110038;
+        box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+    }
+
+    #crear-active:nth-last-child(2){
+        margin-right: 36px;
+    }
+    #crear-active:hover{
+        background: #F7C9F3;
+        border: 1px solid #110038;
+        box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+    }
+    .capture{
+        width: 860px;
+        height: 548px;
+        padding: 0px;
+        margin: 30px auto;
+        background: #E6E6E6;
+        box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    }
+        .capture-title{
+            width: auto;
+            height: 26px;
+            line-height: 26px;
+            margin: 2px;
+            padding-left: 10px;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(to right, rgb(65, 128, 246) 0%, rgb(247, 201, 243) 100%);
+            font-weight: bold;
+            color: white;
+        }
+        #capture-video{
+            width: 98%;
+            height: auto;
+            margin: 8px;
+            background: #FFFFFF;
+            border: 1px solid #979797;
+            box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+        }
