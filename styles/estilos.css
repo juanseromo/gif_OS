@@ -4,8 +4,19 @@
     font-family: 'Chakra Petch', bold;
     font-size: 14px;
 }
+:root {
+    --maingradient: linear-gradient(to right, rgb(65, 128, 246) 0%, rgb(247, 201, 243) 100%);
+    --bgcolor: rgb(255, 243, 252);
+}
+/* Aca comienza el código relacionado con JS */
+@media (prefers-color-scheme: light) {
+    :root {
+     --maingradient: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
+     --bgcolor:  #0e0336;
+    }
+   }
 body {
-    background-color: rgb(255, 243, 252);
+    background-color: var(--bgcolor);
     margin: 0px auto;
     display: flex;
     justify-content: center;
@@ -20,7 +31,7 @@ main{
     padding-left: 15px;
     line-height: 33px;
     display: block;
-    background: linear-gradient(to right, rgb(65, 128, 246) 0%, rgb(247, 201, 243) 100%);
+    background: var(--maingradient);
     box-shadow: 0 1px 0 0 #110038;
     color: white;
 }
@@ -141,7 +152,7 @@ section{
         padding-left: 10px;
         align-items: center;
         justify-content: space-between;
-        background: linear-gradient(to right, rgb(65, 128, 246) 0%, rgb(247, 201, 243) 100%);
+        background: var(--maingradient);
         font-weight: bold;
         color: white;
     }
@@ -234,7 +245,7 @@ section{
         flex-flow: row;
         align-items: center;
         justify-content: space-between;
-        background: linear-gradient(to right, rgb(65, 128, 246) 0%, rgb(247, 201, 243) 100%);
+        background: var(--maingradient);
     }
         .imgName {
             width: auto;
@@ -290,7 +301,7 @@ section{
     flex-flow: row;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(to right, rgb(65, 128, 246) 0%, rgb(247, 201, 243) 100%);
+    background: var(--maingradient);
 }
 .gifFrameLong{
     width: 584px;
@@ -315,7 +326,7 @@ section{
         padding-left: 10px;
         align-items: center;
         justify-content: space-between;
-        background: linear-gradient(to right, rgb(65, 128, 246) 0%, rgb(247, 201, 243) 100%);
+        background: var(--maingradient);
         font-weight: bold;
         color: white;
     }
@@ -371,7 +382,7 @@ section{
             padding-left: 10px;
             align-items: center;
             justify-content: space-between;
-            background: linear-gradient(to right, rgb(65, 128, 246) 0%, rgb(247, 201, 243) 100%);
+            background: var(--maingradient);
             font-weight: bold;
             color: white;
         }
@@ -383,3 +394,47 @@ section{
             border: 1px solid #979797;
             box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
         }
+/* Estos son los estilos del toggle exmple */
+.toggle-button-container {
+ display: flex;
+ align-items: center;
+}
+.toggle-button-container em {
+ margin-left: 10px;
+ font-size: 1rem;
+}
+.toggle-button-label {
+ display: inline-block;
+ height: 34px;
+ position: relative;
+ width: 60px;
+}
+.toggle-button-label .toggle-button {
+ display: none;
+}
+.toggle-rounded {
+ background-color: #ccc;
+ bottom: 0;
+ cursor: pointer;
+ left: 0;
+ position: absolute;
+ right: 0;
+ top: 0;
+ transition: 0.4s;
+}
+.toggle-rounded:before {
+ background-color: #fff;
+ bottom: 4px;
+ content: '';
+ height: 26px;
+ left: 4px;
+ position: absolute;
+ transition: 0.4s;
+ width: 26px;
+}
+input:checked + .toggle-rounded {
+ background-color: #9cafeb;
+}
+input:checked + .toggle-rounded:before {
+ transform: translateX(26px);
+}
