@@ -22,7 +22,6 @@ body {
     background-color: var(--bgcolor);
     margin: 0px auto;
     display: flex;
-    max-width: 1438px;
 }
 main{
     width: auto;
