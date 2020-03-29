@@ -166,7 +166,7 @@ button{
         align-items: center;
         
     }
-    .searchbar-buscar{
+    #searchbar-buscar{
         width: 1057px;
         height: 48px;
         line-height: 18px;
