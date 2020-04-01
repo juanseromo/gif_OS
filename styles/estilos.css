@@ -4,6 +4,10 @@
     font-family: 'Chakra Petch', bold;
     font-size: 14px;
 }
+button {
+    cursor: pointer;
+}
+
 :root {
     --maingradient: linear-gradient(to right, rgb(65, 128, 246) 0%, rgb(247, 201, 243) 100%);
     --bgcolor: rgb(255, 243, 252);
@@ -176,7 +180,7 @@ button{
         border: 1px solid #979797;
         box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
     }
-        .buscarBut{
+        #buscarBut{
             width: 102px;
             height: 36px;
             background: #E6E6E6;
@@ -259,7 +263,7 @@ button{
             color: white;
             font-weight: bold;
         }
-        .imgX {
+        #imgX {
             width: 16px;
             height: 14px;
             margin-right: 3px;
@@ -269,6 +273,15 @@ button{
             .img-tittle-container a {
                 text-decoration: none;
             }
+        
+        .gifFra{
+            width: 280px;
+            height: 280px;
+            display: flex;
+            position: absolute;
+            align-items: center;
+        }    
+            
         .gifFrame{
             width: 280px;
             height: 280px;
@@ -286,6 +299,9 @@ button{
                 border: 1px solid #4C2F99;
                 color: white;
                 box-shadow: inset -1px -1px 0 0 #284F99, inset 1px 1px 0 0 #FFFFFF;
+            }
+            .testbt{
+                cursor: pointer;
             }
 .longImg {
     width: 592px;

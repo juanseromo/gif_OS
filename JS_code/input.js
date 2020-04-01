@@ -3,6 +3,6 @@ document.getElementById("searchbar-buscar").onclick = function(){
     document.getElementsByClassName('searchResults')[0].textContent="Here is the message";
 }
 });
-
-// el siguiente es el codigo para traer la api
-
+keydown
+Fired when a key is pressed.
+Also available via the onkeydown property.
