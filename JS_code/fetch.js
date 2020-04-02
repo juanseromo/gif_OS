@@ -6,28 +6,25 @@ var requestOptions = {
 function getData (){
     let urlLink = "https://api.giphy.com/v1/gifs/random?api_key=vNMFm9NCe2b7kKg9kw43Y24BvKXiNECz&tag=cats&rating=G", requestOptions;
     
-    let obj = fetch(urlLink)
+    return fetch(urlLink)
     .then((response) => {
-        return response.json() });
-
-    obj.then ((data) =>{
-        data.data.images.downsized.url;
-    });
-    
-
-    obj.catch((error) => {
+        return response.json() 
+    })
+    .then ((data) =>{
+        return data.data.images.downsized.url; 
+    })
+    .catch((error) => {
         console.error('Error:', error);
-      });
-    
-} getData()
+      });    
+}
 
-async function gifFram (getData){
+async function gifFram (){
     
     let images = document.querySelectorAll("img.gifFra");
     console.log(images);
 
-    for await (let i of getData) {
-        images[i].setAttribute("src", getData());
+    for (let i = 0; i < images.length; i++) {
+        images[i].setAttribute("src", await getData());
         };
         
 } gifFram();
