@@ -164,11 +164,11 @@ button{
         color: white;
     }
     .searchBarra {
+        height: 75px;
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        
     }
     #searchbar-buscar{
         width: 1057px;
@@ -180,6 +180,9 @@ button{
         border: 1px solid #979797;
         box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
     }
+    #searchbar-buscar:enabled{
+        color: blueviolet;
+    }
         #buscarBut{
             width: 102px;
             height: 36px;
@@ -190,7 +193,12 @@ button{
             justify-content: space-around;
             box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
         }
-    .searchResults {
+        #buscarBut:hover{
+            background: #F7C9F3;
+            color: #000000;   
+        }
+        
+    #searchResults {
         width: auto;
         height: 160px;
         padding-top: 5px;
@@ -241,12 +249,13 @@ button{
     margin-bottom: 10px;
     box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
     background: #E6E6E6;
-    padding: 4px 4px 0px 4px;
+    padding: 4px 4px 4px 4px;
+    overflow: hidden;
     }
     .img-tittle-container{
         width: 280px;
         height: 24px;
-        line-height: 25px;
+        line-height: 18px;
         margin: 0px 0px 2px 0px;
         padding: 0px;
         display: flex;
@@ -263,11 +272,18 @@ button{
             color: white;
             font-weight: bold;
         }
+        .imgNamet {
+            width: auto;
+            height: auto;
+            line-height: 20px;
+            margin-left: 5px;
+            color: white;
+            font-weight: bold;
+        }
         #imgX {
             width: 16px;
             height: 14px;
             margin-right: 3px;
-            background-image: url(images/close.svg);
             background-repeat: no-repeat;
         }
             .img-tittle-container a {
@@ -275,33 +291,27 @@ button{
             }
         
         .gifFra{
-            width: 280px;
+            min-height: 280px;
+            max-width: 280px;
+        
+        }
+        .gifTrend {
+            min-width: 280px;
             height: 280px;
-            display: flex;
-            position: absolute;
-            align-items: center;
-        }    
-            
-        .gifFrame{
-            width: 280px;
-            height: 280px;
-            display: flex;
-            position: absolute;
-            align-items: center;
+            padding: auto;
+            margin: 0px;
+            border: 0px;
         }
             .verMasButt  {
                 width: 81px;
                 height: 34px;
                 margin: 10px;
+                top: -60px;
                 position: relative;
-                top: 220px;
                 background: #4180F6;
                 border: 1px solid #4C2F99;
                 color: white;
                 box-shadow: inset -1px -1px 0 0 #284F99, inset 1px 1px 0 0 #FFFFFF;
-            }
-            .testbt{
-                cursor: pointer;
             }
 .longImg {
     width: 592px;
@@ -309,12 +319,13 @@ button{
     margin-bottom: 10px;
     box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
     background: #E6E6E6;
-    padding: 4px 4px 0px 4px;
+    padding: 4px 4px 4px 4px;
+    overflow: hidden;
 }
 .img-tittle-container-long{
     width: 584px;
     height: 24px;
-    line-height: 25px;
+    line-height: 18px;
     margin: 0px 0px 2px 0px;
     padding: 0px;
     display: flex;
@@ -323,12 +334,12 @@ button{
     justify-content: space-between;
     background: var(--maingradient);
 }
+    .img-tittle-container-long a {
+        text-decoration: none;
+    }
 .gifFrameLong{
-    width: 584px;
-    height: 280px;
-    display: flex;
-    position: absolute;
-    align-items: center;
+    min-width: 584px;
+    min-height: 278px;
 }
 .crear-guifos{
     width: 684px;
