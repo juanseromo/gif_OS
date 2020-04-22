@@ -1,10 +1,11 @@
 <!doctype html>
+<html lang="en">
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
     <link href="styles/estilos.css" rel="stylesheet" type="text/css">
     <style>
         @import url('https://fonts.googleapis.com/css?family=Chakra+Petch:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap');
@@ -19,25 +20,27 @@
             Bienvenidos/as a Guifos.com! — — — — — — Donde los gifs están.///// Número de visitas: 12.765.803
         </span>
         <div class="nav-container">
-            <img class="logoGifos" alt="logo gifos" src="images/gifOF_logo.png">
+            <img id="logoGifos" alt="logo gifos" src="">
             <nav class="menu">
-                <a href="crear-Gifos.html" class="nav-link"> Crear GifOS </a>
+                <a href="create.html" class="nav-link"> Crear GifOS </a>
                 <div class="dropdown">
                     <a href="#" class="nav-link"> Elegir Tema </a>
                     <button class="dropdown-img"> 
 						<img src="images/dropdown.svg" alt=""/> </button>
                     <div class="dropdown-menu">
-                        <a id="dropdown-Item" value="Sailor-Day" href="#"> Sailor Day </a>
-                        <a id="dropdown-Item" value="Sailor-night" href="#"> Sailor Night </a>
+                        <a id="dropdown-Item" value="Sailor-Day" href="#" > 
+                            <label class="toggle-button-label" for="checkbox">
+                                Sailor Day  <input type="checkbox" class="toggle-button" id="checkbox" />
+                            </label>
+                        </a>
+                        <a id="dropdown-Item" value="Sailor-night" href="#" > 
+                            <label class="toggle-button-label" for="checkbox">
+                                Sailor Night  <input type="checkbox" class="toggle-button" id="checkbox" />
+                            </label>
+                        </a>
                     </div>
                 </div>
-                <div class="toggle-button-container">
-                    <label class="toggle-button-label" for="checkbox">
-                      <input type="checkbox" class="toggle-button" id="checkbox" />
-                      <div class="toggle-rounded"></div>
-                    </label>
-                </div>
-                <a href="mis-guifos.html" class="misGuifos-link"> Mis guifos</a> 
+                <a href="mis-guifos.html" class="misGuifos"> Mis guifos</a> 
             </nav>
         </div>
     </header>
@@ -45,8 +48,8 @@
         <section class="searchBar"> 
             <div class="searchBar-cont">Buscar</div>
             <div class="searchBarra">
-                <input id="searchbar-buscar" type="text" name="q" minlength="1" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
-                <button id="buscarBut" onclick="buscarGif()"> <img src="images/lupa_inactive.svg" alt="lupa-inactive"/>Buscar</button>
+                <input id="searchbar-buscar" type="text" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
+                <button id="buscarBut" onclick="buscarGif(); buscarGifTit()"> <img src="images/lupa_inactive.svg" alt="lupa-inactive"/>Buscar</button>
             </div>
             <div id="searchResults">
                 <a class="searchResultItem" href="#"> result 1 </a>
@@ -60,44 +63,44 @@
                 Hoy te sugerimos
             </div>
             <ul>
-                <li class="suggest-img"> 
-                    <div class="img-tittle-container">
+                <li class="suggest-imgt"> 
+                    <div class="img-tittle-containert">
                         <a href="#" class="imgNamet"></a>
                         <a href="#" id="imgX"> <img src="images/close.svg" alt="close-gif"></a> 
                     </div>
-                    <div >
+                    <div class="gifCont">
                         <img class="gifTrend" src="" alt=""> 
                         <button class="verMasButt"> Ver más </button>
                     </div>
                 </li>
-                <li class="suggest-img"> 
-                    <div class="img-tittle-container">
+                <li class="suggest-imgt"> 
+                    <div class="img-tittle-containert">
                         <a href="#" class="imgNamet"></a>
                         <a href="#" id="imgX"> <img src="images/close.svg" alt="close-gif"></a> 
                     </div>
-                    <div>
+                    <div class="gifCont">
                         <img class="gifTrend" src="" alt="">
                         <button class="verMasButt"> Ver más </button>
                     </div>
                 </li>
-                <li class="suggest-img"> 
-                    <div class="img-tittle-container">
+                <li class="suggest-imgt"> 
+                    <div class="img-tittle-containert">
                         <a href="#" class="imgNamet"></a>
                         <a href="#" id="imgX"> <img src="images/close.svg" alt="close-gif"></a> 
                     </div>
-                    <div>
+                    <div class="gifCont">
                         <img class="gifTrend" src="" alt="">
                         <button class="verMasButt"> Ver más </button>
                     </div>
                 </li>
-                <li class="suggest-img"> 
-                    <div class="img-tittle-container">
+                <li class="suggest-imgt"> 
+                    <div class="img-tittle-containert">
                         <a href="#" class="imgNamet"></a>
                         <a href="#" id="imgX"> <img src="images/close.svg" alt="close-gif"></a> 
                     </div>
-                    <div>
+                    <div class="gifCont">
                         <img class="gifTrend" src="" alt="">
-                        <button class="verMasButt"> Ver más </button>
+                        <button class="verMasButt" > Ver más </button>
                     </div>
                 </li>
             </ul>
@@ -108,94 +111,108 @@
             </div>
             <ul>
                 <li class="suggest-img"> 
-                    <div class="img-tittle-container">
-                        <a href="#" class="imgName"> Nombre del gif </a>
-                        <a href="#" id="imgX"> <img src="images/close.svg" alt="close-gif"></a> 
+                    <div class="img-title-container">
+                        <a href="#" class="imgName"></a>
                     </div>
+                    <div class="gifCont">
                         <img class="gifFra" src="" alt="">
+                    </div>
                 </li>
                 <li class="suggest-img"> 
-                    <div class="img-tittle-container">
-                        <a href="#" class="imgName"> Nombre del gif </a>
-                        <a href="#" id="imgX"> <img src="images/close.svg" alt="close-gif"></a> 
+                    <div class="img-title-container">
+                        <a href="#" class="imgName"></a>
                     </div>
-                        <img class="gifFra" src="" alt="">  
+                    <div class="gifCont">
+                        <img class="gifFra" src="" alt="">
+                    </div>
                 </li>
                 <li class="longImg"> 
-                    <div class="img-tittle-container-long">
-                        <a href="#" class="imgName"> Nombre del gif </a>
-                        <a href="#" id="imgX"> <img src="images/close.svg" alt="close-gif"></a> 
+                    <div class="img-title-container-long">
+                        <a href="#" class="imgName"></a>
                     </div>
-                        <img class="gifFrameLong" src="" alt=""> 
-                </li>
-                <li class="longImg"> 
-                    <div class="img-tittle-container-long">
-                        <a href="#" class="imgName"> Nombre del gif </a>
-                        <a href="#" id="imgX"> <img src="images/close.svg" alt="close-gif"></a> 
-                    </div>
-                        <img class="gifFrameLong" src="" alt=""> 
-                </li>
-                <li class="suggest-img"> 
-                    <div class="img-tittle-container">
-                        <a href="#" class="imgName"> Nombre del gif </a>
-                        <a href="#" id="imgX"> <img src="images/close.svg" alt="close-gif"></a> 
-                    </div>
-                        <img class="gifFra" src="" alt="">                         
-                </li>
-                <li class="suggest-img"> 
-                    <div class="img-tittle-container">
-                        <a href="#" class="imgName"> Nombre del gif </a>
-                        <a href="#" id="imgX"> <img src="images/close.svg" alt="close-gif"></a> 
-                    </div>
-                        <img class="gifFra" src="" alt=""> 
-                </li>
-                <li class="suggest-img"> 
-                    <div class="img-tittle-container">
-                        <a href="#" class="imgName"> Nombre del gif </a>
-                        <a href="#" id="imgX"> <img src="images/close.svg" alt="close-gif"></a> 
-                    </div>
-                        <img class="gifFra" src="" alt="">                 </li>
-                <li class="suggest-img"> 
-                    <div class="img-tittle-container">
-                        <a href="#" class="imgName"> Nombre del gif </a>
-                        <a href="#" id="imgX"> <img src="images/close.svg" alt="close-gif"></a> 
-                    </div>
-                        <img class="gifFra" src="" alt=""> 
-                </li>
-                <li class="longImg"> 
-                    <div class="img-tittle-container-long">
-                        <a href="#" class="imgName"> Nombre del gif </a>
-                        <a href="#" id="imgX"> <img src="images/close.svg" alt="close-gif"></a> 
-                    </div>
+                    <div class="gifFrameLongCont">
                         <img class="gifFrameLong" src="" alt="">
+                    </div>
+                </li>
+                <li class="longImg"> 
+                    <div class="img-title-container-long">
+                        <a href="#" class="imgName"></a>
+                    </div>
+                    <div class="gifFrameLongCont">
+                        <img class="gifFrameLong" src="" alt="">
+                    </div>
                 </li>
                 <li class="suggest-img"> 
-                    <div class="img-tittle-container">
-                        <a href="#" class="imgName"> Nombre del gif </a>
-                        <a href="#" id="imgX"> <img src="images/close.svg" alt="close-gif"></a> 
+                    <div class="img-title-container">
+                        <a href="#" class="imgName"></a>
                     </div>
-                        <img class="gifFra" src="" alt=""> 
+                    <div class="gifCont">
+                        <img class="gifFra" src="" alt="">
+                    </div>                  
                 </li>
                 <li class="suggest-img"> 
-                    <div class="img-tittle-container">
-                        <a href="#" class="imgName"> Nombre del gif </a>
-                        <a href="#" id="imgX"> <img src="images/close.svg" alt="close-gif"></a> 
+                    <div class="img-title-container">
+                        <a href="#" class="imgName"></a>
                     </div>
-                        <img class="gifFra" src="" alt=""> 
+                    <div class="gifCont">
+                        <img class="gifFra" src="" alt="">
+                    </div>
                 </li>
                 <li class="suggest-img"> 
-                    <div class="img-tittle-container">
-                        <a href="#" class="imgName"> Nombre del gif </a>
-                        <a href="#" id="imgX"> <img src="images/close.svg" alt="close-gif"></a> 
+                    <div class="img-title-container">
+                        <a href="#" class="imgName"></a>
                     </div>
-                        <img class="gifFra" src="" alt=""> 
+                    <div class="gifCont">
+                        <img class="gifFra" src="" alt="">
+                    </div>    
                 </li>
                 <li class="suggest-img"> 
-                    <div class="img-tittle-container">
-                        <a href="#" class="imgName"> Nombre del gif </a>
-                        <a href="#" id="imgX"> <img src="images/close.svg" alt="close-gif"></a> 
+                    <div class="img-title-container">
+                        <a href="#" class="imgName"></a>
                     </div>
-                        <img class="gifFra" src="" alt=""> 
+                    <div class="gifCont">
+                        <img class="gifFra" src="" alt="">
+                    </div>
+                </li>
+                <li class="longImg"> 
+                    <div class="img-title-container-long">
+                        <a href="#" class="imgName"></a>
+                    </div>
+                    <div class="gifFrameLongCont">
+                        <img class="gifFrameLong" src="" alt="">
+                    </div>
+                </li>
+                <li class="suggest-img"> 
+                    <div class="img-title-container">
+                        <a href="#" class="imgName"></a>
+                    </div>
+                    <div class="gifCont">
+                        <img class="gifFra" src="" alt="">
+                    </div>
+                </li>
+                <li class="suggest-img"> 
+                    <div class="img-title-container">
+                        <a href="#" class="imgName"></a>
+                    </div>
+                    <div class="gifCont">
+                        <img class="gifFra" src="" alt="">
+                    </div>
+                </li>
+                <li class="suggest-img"> 
+                    <div class="img-title-container">
+                        <a href="#" class="imgName"></a>
+                    </div>
+                    <div class="gifCont">
+                        <img class="gifFra" src="" alt="">
+                    </div>
+                </li>
+                <li class="suggest-img"> 
+                    <div class="img-title-container">
+                        <a href="#" class="imgName"></a>
+                    </div>
+                    <div class="gifCont">
+                        <img class="gifFra" src="" alt="">
+                    </div> 
                 </li>
             </ul>
         </section>
@@ -205,6 +222,7 @@
 <script src="JS_code/fetch.js"></script> 
 <!-- -->
 <script src="JS_code/input.js"></script>
+<script src="JS_code/hover.js"></script>
 </body>
 </html>
 

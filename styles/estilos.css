@@ -11,17 +11,23 @@ button {
 :root {
     --maingradient: linear-gradient(to right, rgb(65, 128, 246) 0%, rgb(247, 201, 243) 100%);
     --bgcolor: rgb(255, 243, 252);
+    --butcolor: #F7C9F3;
+    --buttext: #110038;
+    --itemHover: #FFF4FD;
+    --linkHover: #E6BBE2;
 }
 /* Aca comienza el código relacionado con JS */
 @media (prefers-color-scheme: light) {
     :root {
      --maingradient: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
      --bgcolor:  #0e0336;
+     --butcolor: #EE3EFE;
+     --buttext: rgb(255, 255, 255);
+     --itemHover: #2E32FB;
+     --linkHover: rgb(216, 55, 231);
     }
    }
-html{
-    overflow: scroll;
-}
+
 body {
     background-color: var(--bgcolor);
     margin: 0px auto;
@@ -48,7 +54,7 @@ main{
     height: 110px;
     width: 1200px;
 }
-.logoGifos {
+#logoGifos {
     width: 90px;
     height: 48px;
 }
@@ -66,10 +72,10 @@ main{
     line-height: 36px;
     text-align: center;
     font-size: 16px;
-    color: #110038;
+    color: var(--buttext);
     display: flex;
     flex-direction: row;
-    background: #F7C9F3;
+    background: var(--butcolor);
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
 }
@@ -79,7 +85,7 @@ main{
     padding: auto;
     text-align: center;
     line-height: 30px;
-    background: #F7C9F3;
+    background: var(--butcolor);
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0  #997D97, inset 1px 1px 0 0 #FFFFFF;
 }
@@ -91,6 +97,7 @@ main{
     box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
     position: absolute;
     transform: translateY(36px);
+    z-index: 1;
 }
 #dropdown-Item {
     width: 150px;
@@ -98,41 +105,64 @@ main{
     margin: 10px 10px 0px 10px;
     background: #F0F0F0;
     border: 1px solid #808080;
-    line-height: 36px;
+    line-height: 20px;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
-    color: #110038;
-    display: block;
+    color: black;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
     box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
 }
+#dropdown-Item:hover {
+    background: var(--itemHover);
+    color: var(--buttext);
+}
 .nav-link:hover{
-    background: #E6BBE2;
+    background: var(--linkHover);
     border: 1px solid #110038;
+    color: var(--buttext);
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
 }
 .dropdown:hover .dropdown-menu{
     display: block;
+    color: var(--buttext);
 }
 .dropdown-img:hover{
-    background: #E6BBE2;
+    background: var(--linkHover);
+    color: var(--buttext);
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
 }
 .misGuifos-link:hover{
     color: #706783;
 }
-.dropdown-Item:hover{
-    background: #FFF4FD;
-    border: 1px solid #CCA6C9;
-    box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
+
+#dropHid {
+    width: 150px;
+    height: 36px;
+    margin: 10px 10px 0px 10px;
+    background: #F0F0F0;
+    border: 1px solid #808080;
+    line-height: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    display: flex;
+    visibility: hidden;
+    justify-content: center;
+    flex-wrap: nowrap;
+    box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
 }
 
-.misGuifos-link {
+
+.misGuifos {
     width: auto;
     height: auto;
     margin-left: 20px;
-    color: #110038;
+    color: var(--buttext);
     letter-spacing: 0;
     line-height: 36px;
     text-decoration: none;
@@ -243,7 +273,7 @@ button{
     border: 1px solid #E6BBE2;
     box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
 }
-.suggest-img{
+.suggest-imgt{
     width: 288px;
     height: 314px;
     margin-bottom: 10px;
@@ -252,7 +282,17 @@ button{
     padding: 4px 4px 4px 4px;
     overflow: hidden;
     }
-    .img-tittle-container{
+.suggest-img{
+    width: 288px;
+    height: 304px;
+    display: flex;
+    margin-bottom: 10px;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    background: #E6E6E6;
+    padding: 4px 4px 4px 4px;
+    z-index: 1;
+    }
+    .img-tittle-containert{
         width: 280px;
         height: 24px;
         line-height: 18px;
@@ -263,6 +303,9 @@ button{
         align-items: center;
         justify-content: space-between;
         background: var(--maingradient);
+    }
+    .img-tittle-containert a {
+        text-decoration: none;
     }
         .imgName {
             width: auto;
@@ -286,66 +329,95 @@ button{
             margin-right: 3px;
             background-repeat: no-repeat;
         }
-            .img-tittle-container a {
-                text-decoration: none;
-            }
-        
-        .gifFra{
-            min-height: 280px;
-            max-width: 280px;
-        
-        }
         .gifTrend {
             min-width: 280px;
             height: 280px;
-            padding: auto;
-            margin: 0px;
-            border: 0px;
+        }
+        .gifCont{
+            width: 280px;
+            height: 296px;
+            position: absolute;
+            overflow: hidden;
+        }
+        .gifFra{
+            min-width: 100%;
+            min-height: 100%;
+        }
+        .img-title-container{
+            width: 280px;
+            height: 24px;
+            line-height: 18px;
+            padding: 0px;
+            display: none;
+            align-self: flex-end;
+            z-index: 3;
+            background: var(--maingradient);
+        }
+        .img-title-container a {
+            text-decoration: none;
+        }
+        .titleOff{
+            display: none;
         }
             .verMasButt  {
-                width: 81px;
+                width: 100px;
                 height: 34px;
                 margin: 10px;
                 top: -60px;
+                color: white;
                 position: relative;
                 background: #4180F6;
                 border: 1px solid #4C2F99;
-                color: white;
-                box-shadow: inset -1px -1px 0 0 #284F99, inset 1px 1px 0 0 #FFFFFF;
+                box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+                
             }
+            .verMasButt:hover{
+                background: #3A72DB;
+                border: 1px solid #4C2F99;
+                box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+            }
+        
 .longImg {
     width: 592px;
-    height: 314px;
+    height: 304px;
     margin-bottom: 10px;
     box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
     background: #E6E6E6;
     padding: 4px 4px 4px 4px;
-    overflow: hidden;
+    display: flex;
+    z-index: 1;
 }
-.img-tittle-container-long{
+
+.img-title-container-long{
     width: 584px;
     height: 24px;
     line-height: 18px;
-    margin: 0px 0px 2px 0px;
-    padding: 0px;
-    display: flex;
-    flex-flow: row;
-    align-items: center;
-    justify-content: space-between;
+    align-self: flex-end;
     background: var(--maingradient);
+    z-index: 3;
+    display: none;
 }
-    .img-tittle-container-long a {
+    .img-title-container-long a {
         text-decoration: none;
     }
 .gifFrameLong{
-    min-width: 584px;
-    min-height: 278px;
+    min-width: 100%;
+    min-height: 100%;
 }
-.crear-guifos{
+.gifFrameLongCont{
+    width: 584px;
+    height: 296px;
+    position: absolute;
+    overflow: hidden;
+}
+#crear-guifos{
     width: 684px;
     height: 386px;
-    padding: 0px;
+    padding-top: 2px;
+    padding-left: 1px;
+    padding-right: 1px;
     margin: 100px auto;
+    display: block;
     background: #E6E6E6;
     box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
 }
@@ -368,12 +440,12 @@ button{
     article.arti-text p:nth-child(3){
         line-height: 26px;
     }
-    .crear-guifos img{
+    #crear-guifos img{
         margin-top: 30px;
         margin-left: 25px;
         float: left;
     }
-    #crear-active{
+    #comenzar{
         width: 144px;
         height: 36px;
         text-decoration: none;
@@ -384,28 +456,51 @@ button{
         line-height: 32px;
         margin-right: 16px;
         margin-top: 10px;
+        cursor: pointer;
         background: #FFF4FD;
         border: 1px solid #110038;
         box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
     }
 
-    #crear-active:nth-last-child(2){
+    #comenzar:nth-last-child(2){
         margin-right: 36px;
     }
-    #crear-active:hover{
+    #comenzar:hover{
         background: #F7C9F3;
         border: 1px solid #110038;
         box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
     }
-    .capture{
+    #cancel{
+        width: 144px;
+        height: 36px;
+        text-decoration: none;
+        color: #110038;
+        font-size: 16px;
+        float: right;
+        text-align: center;
+        line-height: 32px;
+        margin-right: 16px;
+        margin-top: 10px;
+        cursor: pointer;
+        background: #FFF4FD;
+        border: 1px solid #110038;
+        box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+    }
+    #cancel:hover{
+        background: #F7C9F3;
+        border: 1px solid #110038;
+        box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+    }
+    #capture{
         width: 860px;
-        height: 548px;
-        padding: 0px;
+        height: 640px;
+        padding: 4px;
+        display: none;
         margin: 30px auto;
         background: #E6E6E6;
         box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
     }
-        .capture-title{
+        #capture-title{
             width: auto;
             height: 26px;
             line-height: 26px;
@@ -418,54 +513,139 @@ button{
             color: white;
         }
         #capture-video{
-            width: 98%;
-            height: auto;
+            width: 834px;
+            height: 510px;
             margin: 8px;
             background: #FFFFFF;
             border: 1px solid #979797;
             box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
         }
+        #preview {
+            width: 834px;
+            height: 510px;
+            margin: 8px;
+            background: #FFFFFF;
+            border: 1px solid #979797;
+            display: none;
+            box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+        }
+#capturar{
+    width: 144px;
+    height: 36px;
+    text-decoration: none;
+    color: #110038;
+    font-size: 16px;
+    float: right;
+    text-align: center;
+    line-height: 32px;
+    margin-right: 16px;
+    margin-top: 10px;
+    background: #FFF4FD;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+#capturar:hover{
+    background: #F7C9F3;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+#upload, #repeat, #btn-stop, #copy, #download, #listo {
+    width: 144px;
+    height: 36px;
+    display: none;
+    text-decoration: none;
+    color: #110038;
+    font-size: 16px;
+    float: right;
+    text-align: center;
+    line-height: 32px;
+    margin-right: 16px;
+    margin-top: 10px;
+    background: #FFF4FD;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+
+#upload:hover, #repeat:hover, #btn-stop:hover, #copy:hover, #download:hover, #listo:hover{
+    background: #F7C9F3;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+h2{
+    margin: 10px;
+}
+.hideDrop{
+    display: none;
+}
+#success{
+    width: 721px;
+    height: 391px;
+    padding: 4px;
+    display: none;
+    margin: 30px auto;
+    background: #E6E6E6;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+    #gifview{
+        width: 365;
+        max-height: 191px;
+        margin: 12px;
+        background: #FFFFFF;
+        border: 1px solid #979797;
+        box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+    }
+
 /* Estos son los estilos del toggle exmple */
-.toggle-button-container {
- display: flex;
- align-items: center;
-}
-.toggle-button-container em {
- margin-left: 10px;
- font-size: 1rem;
-}
+
 .toggle-button-label {
- display: inline-block;
- height: 34px;
- position: relative;
- width: 60px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding-top: 5px;
+    font-size: 16px;
+    cursor: pointer;
 }
-.toggle-button-label .toggle-button {
- display: none;
+.toggle-button {
+    display: none;
+    width: 150px;
 }
-.toggle-rounded {
- background-color: #ccc;
- bottom: 0;
- cursor: pointer;
- left: 0;
- position: absolute;
- right: 0;
- top: 0;
- transition: 0.4s;
+
+/* Estilos del progress bar 
+body {
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  display: flex;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
 }
-.toggle-rounded:before {
- background-color: #fff;
- bottom: 4px;
- content: '';
- height: 26px;
- left: 4px;
- position: absolute;
- transition: 0.4s;
- width: 26px;
+
+.progress {
+  background: rgba(255,255,255,0.1);
+  justify-content: flex-start;
+  border-radius: 100px;
+  align-items: center;
+  position: relative;
+  padding: 0 5px;
+  display: flex;
+  height: 40px;
+  width: 500px;
 }
-input:checked + .toggle-rounded {
- background-color: #9cafeb;
+
+.progress-value {
+  animation: load 3s normal forwards;
+  box-shadow: 0 10px 40px -10px #fff;
+  border-radius: 100px;
+  background: #fff;
+  height: 30px;
+  width: 0;
 }
-input:checked + .toggle-rounded:before {
- transform: translateX(26px);
+
+@keyframes load {
+  0% { width: 0; }
+  100% { width: 68%; }
 }
+
+
+*/

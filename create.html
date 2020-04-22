@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <title>This is creating my GuifOS</title>
+    <link href="styles/estilos.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.8/RecordRTC.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Chakra+Petch:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap');
+    </style>
+</head>
+<body>
+<main>
+    <span class="topTittle">
+        Bienvenidos/as a Guifos.com! — — — — — — Donde los gifs están.///// Número de visitas: 12.765.803
+    </span>
+    <header>
+        <div class="nav-container">
+            <a href="index.html"><img id="logoGifos" alt="logo gifos" src=""></a>
+            <a id="dropHid" value="Sailor-Day" href="#" > 
+                <label class="toggle-button-label" for="checkbox">
+                    Dark or Light <input type="checkbox" class="toggle-button" id="checkbox" />
+                </label>
+            </a>
+        </div>
+    </header>
+    <section id="crear-guifos">
+        <div class="crear-guifos-title">Buscar</div>
+            <img src="images/window_img.png" alt="window_imagen">
+            <article class="arti-text"><h1>Aqui podrás crear tus propios GuifOS</h1>
+            <p> Crear tu guifo es muy fácil, graba cualquier imagen con tu cámara y obtén guifos personalizados. Los pasos para crear tu guifo son:</p>
+            <p><b>1)</b> Dar permisos de acceso a la cámara (sólo por el tiempo de uso)
+            <br><b>2)</b> Capturar tu momento guifo
+            <br><b>3)</b> Revisar el momento
+            <br><b>4)</b> Listo para subir y compartir! <br></p>
+            <p>¿Quieres comenzar a crear tu <b>guifo</b> ahora?</p></article>
+        <a href="index.html" id="cancel">Cancelar</a>
+        <a id="comenzar">Comenzar</a>
+    </section>
+    <section id="success">
+        <div id="capture-title">Guifo subido con exito</div>
+        <img id="gifview" src="" alt="">
+
+        <button id="copy">Copiar Guifo</button>
+        <button id="download">Descargar Guifo</button>
+        <a href="mis-guifos.html" id="listo" >Listo</a>
+        
+
+
+    </section>
+    <section class="suggest">
+        <div class="suggest-searchbar">
+            Mis GuifOS...
+        </div>
+        <ul>
+            <li class="suggest-img"> 
+                <div class="gifCont">
+                    <img class="gifFra" src="" alt="">
+                </div>
+            </li>
+            <li class="suggest-img"> 
+                <div class="gifCont">
+                    <img class="gifFra" src="" alt="">
+                </div>
+            </li>
+            <li class="suggest-img"> 
+                <div class="gifCont">
+                    <img class="gifFra" src="" alt="">
+                </div>
+            </li>
+            <li class="suggest-img"> 
+                <div class="gifCont">
+                    <img class="gifFra" src="" alt="">
+                </div>
+            </li>
+        </ul>
+    </section>
+    <section id="capture">
+        <div id="capture-title">un chequeo antes de empezar</div>
+
+        <video id="capture-video" src="#"></video>
+        <img id="preview" src="" alt="">
+        
+        <button id="capturar">Capturar</button>
+        <button id="btn-stop" disabled>Stop Recording</button>
+
+        <button id="upload">Upload</button>
+        <button id="repeat">Repetir Captura</button>
+        <h2></h2>
+        <div id="progress">
+            <div class="progress-value"></div>
+        </div>
+        
+    </section>
+    
+</main>
+<script src="JS_code/index.js"></script>
+<script src="JS_code/toggle-theme.js"></script>
+
+</body>	
+</html>
+

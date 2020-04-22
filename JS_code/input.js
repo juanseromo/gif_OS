@@ -8,10 +8,10 @@ document.addEventListener("keydown", function(){
         if ( inp.value !== ""){
             bar.style.display = "block";
             sea.style.color = "black"
-            inp.innerHTML = '<img src="images/lupa.svg" alt="lupa-inactive"/>Buscar';
+            sea.innerHTML = '<img src="images/lupa.svg" alt="lupa-inactive"/>Buscar';
             inp.addEventListener('keypress', function (e) {
                 if (e.key === 'Enter') {
-                    buscarGif()
+                    buscarGif(); buscarGifTit();
                 }
             });
             sug.style.display = "none";
@@ -26,12 +26,32 @@ document.addEventListener("keydown", function(){
     }
     });
 
-function buscarGif() {
-   
+function buscarGif(){
     let search = document.getElementById("searchbar-buscar").value;
-    let endpoint = "https://api.giphy.com/v1/gifs/search?api_key=vNMFm9NCe2b7kKg9kw43Y24BvKXiNECz";
+    return buscarGif2(search)
 
-    fetch (endpoint + "&q=" + search + "&limit=13")
+}
+
+let verMas = document.getElementsByClassName("verMasButt")
+for (let i = 0; i < verMas.length; i++) {
+    verMas[i].onclick = () => {
+        let sugc = document.getElementsByClassName("suggest-imgt")[i];
+        let cont = sugc.getElementsByClassName("img-tittle-containert")[0];
+        let titg = cont.getElementsByClassName("imgNamet")[0].textContent;
+        let search = document.getElementById("searchbar-buscar");
+    
+        search.value = titg;
+        buscarGif();
+        console.log(titg);
+    }
+}
+
+
+function buscarGif2(busqueda) {
+   
+    const endpoint = "https://api.giphy.com/v1/gifs/search?api_key=vNMFm9NCe2b7kKg9kw43Y24BvKXiNECz";
+
+    fetch (endpoint + "&q=" + busqueda + "&limit=13")
     .then(response => { 
         return response.json()
     })
@@ -46,69 +66,52 @@ function buscarGif() {
             i++;
         });
     })
-    .catch((error) => {
-        return error
-    })
-} buscarGif()
+    .catch(console.error)
+}
 
 
-function trendingName(){
 
-    let endpoint = "https://api.giphy.com/v1/gifs/trending?api_key=vNMFm9NCe2b7kKg9kw43Y24BvKXiNECz&limit=4";
-
-    fetch(endpoint)
+function buscarGifTit() {
+   
+    let search = document.getElementById("searchbar-buscar").value;
+    let endpoint = "https://api.giphy.com/v1/gifs/search?api_key=vNMFm9NCe2b7kKg9kw43Y24BvKXiNECz";
+    fetch (endpoint + "&q=" + search + "&limit=13")
     .then(response => { 
         return response.json()
     })
     .then(data => {
         return data.data;
     })
-    .then(arr => arr.map((title) => title.title)
-    )
-    .then(tit => {
+    .then(array => array.map((title) => title.title))
+    .then(titt => {
         var i = 0;
-            tit.forEach(element => {
-                let img = document.querySelectorAll("a.imgNamet")[i];
-                img.innerHTML = element.slice(0, 25) + "...";
-                i++; 
+        titt.forEach(element => {
+            let tit = document.querySelectorAll("a.imgName")[i];
+            tit.innerHTML = element.slice(0, 25) + "...";
+            i++;
         });
     })
     .catch((error) => {
         return error
     })
+} buscarGifTit()
 
-} trendingName()
+
+
+
+
+/* 
+
 
 function vermas () {
-    let search = document.getElementById("searchbar-buscar").value;
-        search = tit;
-        let but = document.getElementsByClassName("verMasButt")
-}
 
-/* 
-async function getDat () {
-    let images = document.querySelectorAll("img.gifFra");
-    console.log(images);
-    for (let i = 0; i < images.length; i++) {
-        images[i].setAttribute("src", await buscarGif());
-        };
-} getDat()
+    document.addEventListener("click", function(){
+        document.getElementsByClassName("verMasButt").onclick = function(){
+            document.getElementById("searchbar-buscar").value = element;
+        }
+    })
+} vermas()
 
 
- document.querySelector(".suggest-searchbar").innerHTML = search + ": working";
-
-//WORKS::::
- .then(array => array.map((images) => 
-            console.log(images.images.downsized.url))
-        )
-
-
-
-
-document.addEventListener('', function(){
-document.getElementById("searchbar-buscar").onclick = function(){
-    document.getElementsByClassName('searchResults')[0].textContent="Here is the message";
-}
-});
 
 */
