@@ -99,7 +99,7 @@ main{
     transform: translateY(36px);
     z-index: 1;
 }
-#dropdown-Item {
+.dropdown-Item {
     width: 150px;
     height: 36px;
     margin: 10px 10px 0px 10px;
@@ -115,7 +115,7 @@ main{
     flex-wrap: nowrap;
     box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
 }
-#dropdown-Item:hover {
+.dropdown-Item:hover {
     background: var(--itemHover);
     color: var(--buttext);
 }
@@ -323,7 +323,7 @@ button{
             color: white;
             font-weight: bold;
         }
-        #imgX {
+        .imgX {
             width: 16px;
             height: 14px;
             margin-right: 3px;
@@ -500,7 +500,7 @@ button{
         background: #E6E6E6;
         box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
     }
-        #capture-title{
+        .capture-title{
             width: auto;
             height: 26px;
             line-height: 26px;
