@@ -103,17 +103,13 @@ document.getElementById('btn-stop').onclick = function(blob){
 
 
     let upl = document.getElementById("upload");
-    let rep = document.getElementById("repeat");
+    //let rep = document.getElementById("repeat");
     let stop = document.getElementById("btn-stop");
 
     upl.style.display = "block";
-    rep.style.display = "block";
+    //rep.style.display = "block";
     stop.style.display = "none";
 }
-/*
-document.getElementById('repeat').onclick = function(){
-    reset: function rep () {}
-}*/
 
 document.getElementById('upload').onclick = async function () {
 
@@ -138,17 +134,21 @@ document.getElementById('upload').onclick = async function () {
         .then(geturl => myURL = geturl.data.images.original.url);
 
     localStorage.setItem(myID, myURL);
+    localStorage.getItem(myID, myURL);
+
 
     let prev = document.getElementById('gifview');
     prev.setAttribute("src", myURL);
 
-//  var local = localStorage.getItem(myID, myURL);
+    let gifFra = document.getElementsByClassName('gifFra');
+    gifFra[0].setAttribute("src", myURL);
 
+    
     let succ = document.getElementById("success");
     let upl = document.getElementById("upload");
-    let rep = document.getElementById("repeat");
-    let copy = document.getElementById("copy");
-    let down = document.getElementById("download");
+    //let rep = document.getElementById("repeat");
+    //let copy = document.getElementById("copy");
+    //let down = document.getElementById("download");
     let sug = document.getElementsByClassName("suggest");
     let capt = document.getElementById("capture");
     let listo = document.getElementById("listo");
@@ -156,9 +156,9 @@ document.getElementById('upload').onclick = async function () {
     
     succ.style.display = "block";
     upl.style.display = "none";
-    rep.style.display = "none";
-    copy.style.display = "block";
-    down.style.display = "block";
+    //rep.style.display = "none";
+    //copy.style.display = "none";
+    //down.style.display = "none";
     sug[0].style.display = "block";
     capt.style.display = "none";
     listo.style.display = "block";
