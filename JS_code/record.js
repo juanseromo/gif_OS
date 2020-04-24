@@ -34,7 +34,7 @@ document.getElementById("comenzar").onclick = function(){
 document.getElementById("capturar").onclick = function (callback) {
     navigator.mediaDevices.getUserMedia({ video: true })
     .then(function(camera) {
-        var video = document.getElementById('capture-video');
+        let video = document.getElementById('capture-video');
         video.src = camera;
         video.onloadedmetadata = function(e) {
             video.play();
@@ -50,11 +50,7 @@ document.getElementById("capturar").onclick = function (callback) {
             onGifRecordingStarted: function(gifURL) {
                 document.querySelector('h2').innerHTML = 'Gif recording started.';
 
-                let vid = document.getElementById("capture-video");
-                vid.style.display = "block";
-
                 let image = document.getElementById('capture-video');
-                image.style.display = "block";
                 image.srcObject = gifURL;
             },
             onGifPreview: function(gifURL) {
