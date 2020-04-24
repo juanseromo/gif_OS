@@ -99,7 +99,7 @@ main{
     transform: translateY(36px);
     z-index: 1;
 }
-.dropdown-Item {
+#toggleDay, #toggleNight {
     width: 150px;
     height: 36px;
     margin: 10px 10px 0px 10px;
@@ -115,10 +115,11 @@ main{
     flex-wrap: nowrap;
     box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
 }
-.dropdown-Item:hover {
+#toggleDay:hover, #toggleNight:hover {
     background: var(--itemHover);
     color: var(--buttext);
 }
+
 .nav-link:hover{
     background: var(--linkHover);
     border: 1px solid #110038;
@@ -597,18 +598,7 @@ h2{
 
 /* Estos son los estilos del toggle exmple */
 
-.toggle-button-label {
-    width: 100%;
-    height: 100%;
-    display: block;
-    padding-top: 5px;
-    font-size: 16px;
-    cursor: pointer;
-}
-.toggle-button {
-    display: none;
-    width: 150px;
-}
+
 
 /* Estilos del progress bar 
 body {

@@ -1,5 +1,17 @@
-const toggleButton = document.querySelector('.toggle-button');
-toggleButton.addEventListener('change', toggleTheme, false);
+const toggleDay = document.getElementById('toggleDay');
+const toggleNight = document.getElementById('toggleNight');
+
+toggleDay.addEventListener("click", () => {
+   useTheme('light');
+   localStorage.setItem('theme', 'light');
+   logoGifos.setAttribute("src", "images/gifOF_logo.png");
+})
+
+toggleNight.addEventListener("click", () => {
+   useTheme('dark');
+   localStorage.setItem('theme', 'dark');
+   logoGifos.setAttribute("src", "images/gifOF_dark.png");
+})
 
 const theme = {
    light: {
@@ -19,22 +31,6 @@ const theme = {
       '--linkHover': 'rgb(216, 55, 231)',
    }
 };
-
-const logoGifos = document.getElementById("logoGifos");
-logoGifos.setAttribute("src", "images/gifOF_logo.png");
-
-
-function toggleTheme(e) {
-   if (e.target.checked) {
-      useTheme('dark');
-      localStorage.setItem('theme', 'dark');
-      logoGifos.setAttribute("src", "images/gifOF_dark.png");
-   } else {
-      useTheme('light');
-      localStorage.setItem('theme', 'light');
-      logoGifos.setAttribute("src", "images/gifOF_logo.png");
-   }
-}
 
 function useTheme(themeChoice) {
    document.documentElement.style.setProperty(
@@ -63,20 +59,14 @@ function useTheme(themeChoice) {
    );
 }
 
+const logoGifos = document.getElementById("logoGifos");
+logoGifos.setAttribute("src", "images/gifOF_logo.png");
+
 const preferredTheme = localStorage.getItem('theme');
 if (preferredTheme === 'dark') {
- useTheme('dark');
- toggleButton.checked = true;
+   useTheme('dark');
+   toggleNight.onclick = true;
 } else {
- useTheme('light');
- toggleButton.checked = false;
+   useTheme('light');
+   toggleDay.onclick = true;
 }
-
-/* let a = document.Getelementbytagname("div"):
-a[0].classlist.toggle("dark");
-a[0].classlist.toggle("light");
-a[0].classlist.contains("name of the selected class")
-
-const toggleButton = document.getElementById('dropdown-Item');
-toggleButton.classList.toggle(""('change', toggleTheme, false);
-*/
