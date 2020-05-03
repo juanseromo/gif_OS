@@ -32,14 +32,18 @@ document.getElementById("comenzar").onclick = function(){
 }
 
 document.getElementById("capturar").onclick = function (callback) {
-    navigator.mediaDevices.getUserMedia({ video: true })
+    var constraints = { audio: false, video: {
+        width: 680 ,
+        height: 510 
+      }
+    };
+    navigator.mediaDevices.getUserMedia(constraints)
     .then(function(camera) {
         let video = document.getElementById('capture-video');
-        video.src = camera;
+        video.srcObject = camera;
         video.onloadedmetadata = function(e) {
-            video.play();
+            video.play(e);
         }
-
         recorder = RecordRTC(camera, {
             type: 'gif',
             frameRate: 1,
@@ -49,7 +53,6 @@ document.getElementById("capturar").onclick = function (callback) {
         
             onGifRecordingStarted: function(gifURL) {
                 document.querySelector('h2').innerHTML = 'Gif recording started.';
-
                 let image = document.getElementById('capture-video');
                 image.srcObject = gifURL;
             },
@@ -63,9 +66,7 @@ document.getElementById("capturar").onclick = function (callback) {
                 image.srcObject = gifURL;
             }
         });
-
         recorder.startRecording()
-
     })
     .catch(function(error) {
         alert('Unable to capture your camera. Please check console logs.');
@@ -159,15 +160,6 @@ document.getElementById('upload').onclick = async function () {
     capt.style.display = "none";
     listo.style.display = "block";
     prog.style.visibility = "visible"
-    
+
+    //create element
 } 
-
-/*
-var local = localStorage.getItem();
-let img = document.getElementsByClassName("gifFra");
-
-    for (let i = 0; i < img.length; i++){
-        img[i].setAttribute("src", local);
-    }
-
-*/

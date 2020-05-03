@@ -25,7 +25,7 @@ document.addEventListener("keydown", function(){
         }
     }
     });
-
+ 
 function buscarGif(){
     let search = document.getElementById("searchbar-buscar").value;
     return buscarGif2(search)
@@ -95,23 +95,3 @@ function buscarGifTit() {
         return error
     })
 } buscarGifTit()
-
-
-
-
-
-/* 
-
-
-function vermas () {
-
-    document.addEventListener("click", function(){
-        document.getElementsByClassName("verMasButt").onclick = function(){
-            document.getElementById("searchbar-buscar").value = element;
-        }
-    })
-} vermas()
-
-
-
-*/

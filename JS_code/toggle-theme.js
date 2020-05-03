@@ -3,13 +3,13 @@ const toggleNight = document.getElementById('toggleNight');
 
 toggleDay.addEventListener("click", () => {
    useTheme('light');
-   localStorage.setItem('theme', 'light');
+   sessionStorage.setItem('theme', 'light');
    logoGifos.setAttribute("src", "images/gifOF_logo.png");
 })
 
 toggleNight.addEventListener("click", () => {
    useTheme('dark');
-   localStorage.setItem('theme', 'dark');
+   sessionStorage.setItem('theme', 'dark');
    logoGifos.setAttribute("src", "images/gifOF_dark.png");
 })
 
@@ -62,7 +62,7 @@ function useTheme(themeChoice) {
 const logoGifos = document.getElementById("logoGifos");
 logoGifos.setAttribute("src", "images/gifOF_logo.png");
 
-const preferredTheme = localStorage.getItem('theme');
+const preferredTheme = sessionStorage.getItem('theme');
 if (preferredTheme === 'dark') {
    useTheme('dark');
    toggleNight.onclick = true;
